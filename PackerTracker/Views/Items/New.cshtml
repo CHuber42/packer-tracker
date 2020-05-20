@@ -1,0 +1,14 @@
+<form action="/items" method="post">
+  <label for="name">What item do you need?</label>
+  <input name="name" id="name" type="text" placeholder="Item needed" required>
+  <label for="purchased">Is the item purchased yet?</label>
+  <input name="purchased" id="purchased" type="checkbox">
+  <label for="price">How much is it?</label>
+  <input name="price" id="price" type="number" min="1">
+  <label for="packed">Is the item packed yet?</label>
+  <input name="packed" id="packed" type="checkbox">
+  <label for="weight">How much does it weigh?</label>
+  <input name="weight" id="weight" type="number" min=".01" required><br>
+  <br>
+  <button type="submit">Submit</button>
+</form>
