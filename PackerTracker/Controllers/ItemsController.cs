@@ -4,12 +4,21 @@ using System.Collections.Generic;
 
 namespace Items.Models
 {
-  public class PlacesController : Controller
+  public class ItemsController : Controller
   {
+    // [HttpGet("/items")]
+    // public ActionResult Index()
+    // {
+    //   List<Item> listItem = Item.GetAll(); 
+    //   return View("index", listItem);
+    // }
+
     [HttpGet("/items")]
-    public ActionResult Index()
+    public ActionResult Index(string listType)
     {
       List<Item> listItem = Item.GetAll(); 
+      //filter into 2nd list based on listType acquired from View
+      //return View("index", filteredList)
       return View("index", listItem);
     }
 
@@ -20,9 +29,28 @@ namespace Items.Models
     }
 
     [HttpPost("/items")]      
-    public ActionResult Create(string name, bool purchased, int price, bool packed, float weight)
+    public ActionResult Create(string name, string purchased, int price, string packed, float weight)
     {
-      Item entry = new Item(name,purchased,price,packed,weight);
+      bool isPurchased;
+      bool isPacked;
+      if (purchased == "on")
+      {
+        isPurchased = true;
+      }
+      else
+      {
+          isPurchased = false;
+      }
+      if(packed == "on")
+      {
+        isPacked = true;
+      }
+      else
+      {
+        isPacked = false;
+      }
+
+      Item entry = new Item(name,isPurchased,price,isPacked,weight);
       return RedirectToAction("Index");
     }
 

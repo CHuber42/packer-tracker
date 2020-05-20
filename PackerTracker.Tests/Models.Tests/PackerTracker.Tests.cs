@@ -17,15 +17,15 @@ namespace Items.Tests
     [TestMethod]
     public void ItemsConstructor_NewItemGetsAddedToList_True()
     {
-      Items test1 = new Items("Tent", "not-purchased", "99.99", "not-packed", "5lbs");
+      Items test1 = new Items("Tent", "not-purchased", "100", "not-packed", "5lbs");
       Assert.AreEqual(Items.GetAll().Count, 1);
     }
 
     [TestMethod]
     public void GetId_ItemsInstantiateWithAnIdAndGetterReturns_Int()
     {
-      Items test2 = new Items("Tent", "not-purchased", "99.99", "not-packed", "5lbs");
-      Items testTwo = new Items("SleepingBag", "purchased", "49.99", "packed", "2.5lbs");
+      Items test2 = new Items("Tent", "not-purchased", "100", "not-packed", "5lbs");
+      Items testTwo = new Items("SleepingBag", "purchased", "50", "packed", "2lbs");
       
       int tent = test2.Id;
       int sleepingBag = testTwo.Id;

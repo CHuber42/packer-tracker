@@ -14,3 +14,15 @@
   }
 </ul>
 <a href="/items/new">Add a new item.</a>
+<p>OR</p><br>
+<p>Select a sub-list to view:</p>
+<form action="/items" method="get">
+  <select>
+  <option>Packed</option>
+  <option>Unpacked</option>
+  <option>Purchased</option>
+  <option>Unpurchased</option>
+  <option>All</option>
+  </select>
+  <button type="submit">Filter</button>
+</form>

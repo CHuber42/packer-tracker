@@ -9,19 +9,20 @@ namespace Items.Models
       public bool Purchased{get;set;}
       public int Price{get;set;}
       public bool Packed{get;set;}
-      public float weight{get;set;}
+      public float Weight{get;set;}
       private static List<Item> _itemList = new List<Item>(){};
       public int Id{get;set;}
 
       //Constructor
-      public Item()
+      public Item(string name, bool purchased, int price, bool packed, float weight)
       {
+        
         Name = name;
         Purchased = purchased;
         Price = price;
         Packed = packed;
         Weight = weight;
-        _itemList.Add(this)               
+        _itemList.Add(this);              
         Id = _itemList.Count;
       }
 
